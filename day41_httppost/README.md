@@ -1,16 +1,10 @@
-# day41_httppost
+# youtube_post
 
-A new Flutter project.
+Berikut merupakan bahan ajar tutorial flutter pada kanal youtube tentang http request metode post.
 
-## Getting Started
+Petunjuk penggunaan :
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Jangan replace file pubspec.yaml kalian dengan file pubscpec.yaml ini.
+2. Buka file pubspec.yaml kalian
+3. Tambahkan dependencies yang akan digunakan, mengikuti dengan file pubscpec.yaml ini.
+4. Kalian bisa replace folder lib project dengan folder lib ini atau kalian juga bisa menyalin code-codenya saja.
