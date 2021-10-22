@@ -1,4 +1,7 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import '../models/http_stateful.dart';
 
 class HomeStateful extends StatefulWidget {
   @override
@@ -6,6 +9,8 @@ class HomeStateful extends StatefulWidget {
 }
 
 class _HomeStatefulState extends State<HomeStateful> {
+  HttpStateful dataRespon = HttpStateful();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +29,9 @@ class _HomeStatefulState extends State<HomeStateful> {
                 height: 100,
                 width: 100,
                 child: Image.network(
-                  "https://www.uclg-planning.org/sites/default/files/styles/featured_home_left/public/no-user-image-square.jpg?itok=PANMBJF-",
+                  (dataRespon.avatar == null)
+                      ? "https://picsum.photos/seed/picsum/200/300"
+                      : dataRespon.avatar,
                   fit: BoxFit.cover,
                 ),
               ),
@@ -32,7 +39,9 @@ class _HomeStatefulState extends State<HomeStateful> {
             SizedBox(height: 20),
             FittedBox(
               child: Text(
-                "ID : Belum ada data",
+                (dataRespon.id == null)
+                    ? "ID : Belum ada data"
+                    : dataRespon.id.toString(),
                 style: TextStyle(fontSize: 20),
               ),
             ),
@@ -58,7 +67,15 @@ class _HomeStatefulState extends State<HomeStateful> {
             ),
             SizedBox(height: 100),
             OutlinedButton(
-              onPressed: () {},
+              onPressed: () {
+                HttpStateful.connectAPI("3");
+
+                HttpStateful.connectAPI(Random().nextInt(10).toString())
+                    .then((value) => dataRespon = value);
+
+                setState(() {
+                });
+              },
               child: Text(
                 "GET DATA",
                 style: TextStyle(

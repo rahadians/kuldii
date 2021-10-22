@@ -15,9 +15,10 @@ class HttpProvider with ChangeNotifier {
 
     Uri url = Uri.parse("https://reqres.in/api/users/" + id);
     var hasilResponse = await http.get(url);
+
     _data = (json.decode(hasilResponse.body))["data"];
 
-    // print(_data);
     notifyListeners();
   }
+
 }
