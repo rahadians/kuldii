@@ -1,0 +1,37 @@
+format penulisana app lifecycle
+class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
+  int number=0;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance!.addObserver(this);
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    switch (state) {
+      case AppLifecycleState.inactive:
+        number=99;
+        break;
+      case AppLifecycleState.paused:
+        // ...
+        break;
+      case AppLifecycleState.detached:
+        //...
+        break;
+      case AppLifecycleState.resumed:
+        number=number*2;
+        break;
+      default:
+      //...
+
+    }
+    super.didChangeAppLifecycleState(state);
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance!.removeObserver(this);
+    super.dispose();
+  }

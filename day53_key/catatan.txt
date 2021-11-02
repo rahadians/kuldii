@@ -1,0 +1,36 @@
+random color from array
+
+Color? bgColor = Colors.white;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    final List<Color> randomColor = [
+      Colors.amber,
+      Colors.black,
+      Colors.red,
+      Colors.green,
+      Colors.brown,
+      Colors.purple,
+      Colors.pink,
+      Colors.blue
+    ];
+
+    Random random = Random();
+    bgColor = randomColor[random.nextInt(randomColor.length)];
+  }
+
+
+  ListView(
+                children: allProducts
+                    .map((e) => ProductItem(
+                          ValueKey(e.id),  // ini digunakan untuk id
+                          e.id,
+                          e.title,
+                          e.date,
+                        ))
+                    .toList(),
+              ),
+
+ProductItem(Key key,this.prodId, this.title, this.date) : super(key: key);

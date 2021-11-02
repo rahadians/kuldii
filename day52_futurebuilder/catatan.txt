@@ -1,0 +1,18 @@
+cara ambil data dari API
+
+ambilData() async {
+    var hasilGet = await http.get(Uri.parse("https://reqres.in/api/users/2"));
+    print(json.decode(hasilGet.body)["data"]["last_name"]);
+  }
+
+
+  klik floating button langsung print
+
+  floatingActionButton: FloatingActionButton(onPressed: ambilData,),
+
+  //snapshot itu ada 2 kondisi, ketika sebelum dapat data dan sudah dapat data
+  // 1. kondisi snapshot.ConnectionState.waiting
+  //2.  kondisi snapshot.ConnectionState.Done
+
+  //snapshot mempunya 3 property data, error, connectionstate
+  //data dari API diwakili oleh snapshot

@@ -1,0 +1,26 @@
+final addPlayer = () {
+      players
+          .addPlayer(
+        nameController.text,
+        positionController.text,
+        imageController.text,
+      )
+          .then(
+        (response) {
+          print("Kembali ke Home & kasih notif snack bar");
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text("Berhasil ditambahkan"),
+              duration: Duration(seconds: 2),
+            ),
+          );
+          Navigator.pop(context);
+        },
+      ).catchError((err) => showDialog(
+                context: context,
+                builder: (context) => AlertDialog(
+                  title: Text("Terjadi Error ${err}"),
+                  content: Text("Tidak dapat menambahkan Player"),
+                  actions: [TextButton(onPressed: () {}, child: Text("Ok"))],
+                ),
+              ));

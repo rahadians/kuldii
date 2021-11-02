@@ -1,0 +1,8 @@
+
+yang ada di statefull widget
+
+* initState()
+* didChangeDependencies()
+* didUpdateWidget()
+* deactive()
+* dispose()
