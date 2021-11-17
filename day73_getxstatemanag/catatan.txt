@@ -1,0 +1,3 @@
+reactiv ada 2 Obx dan Getx
+
+simple ada 1 GetBuilder

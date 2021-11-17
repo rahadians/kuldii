@@ -1,0 +1,45 @@
+read apa, read dari kelasnya
+onPressed: () =>contex.read(CounterBlocCubit), //read dari kelasnya
+
+
+
+//cara baca adalah read apa, read dari kelasnya <CounterBlocCubit>
+home: BlocProvider(
+       onPressed: () =>context.read<CounterBlocCubit>(), //read dari kelasnya
+          child: HomePage()),
+
+
+
+          BlocConsumer(
+          //menjalankan ketika kondisi saat ini benar, hasilnya true or false
+
+                  buildWhen: (previous, current) {
+                    if (current > 10) {
+                      return true;
+                    } else {
+                      return false;
+                    }
+                  },
+
+                  // jika buildwhen itu benar maka mejalankan listenwhen
+                  //listenwhen menjalankan jika kondisi benar mejalankan preintah listener
+                  listenWhen: (previous, current) {
+                    if (current > 10) {
+                      return true;
+                    } else {
+                      return false;
+                    }
+                  },
+                  listener: (context, state) {
+                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                      content: Text("Sudah di atas 10"),
+                      duration: Duration(milliseconds: 200),
+                    ));
+                  },
+                  builder: (BuildContext context, state) {
+                    Text(
+                      "angka $state",
+                      style: TextStyle(fontSize: 35),
+                    );
+                  },
+                ),

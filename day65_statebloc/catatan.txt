@@ -1,0 +1,13 @@
+alur bloc
+
+dari tombol ke sync ke controller in ke mesin ke controller out ke stream ke streambuilder
+
+sink sifat public
+controller sifat private
+mesin sifat private
+
+
+
+
+
+

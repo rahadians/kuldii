@@ -1,0 +1,10 @@
+blocListener memiliki parameter listener yang berfungsi untuk persyaratan if else
+
+ini untuk membuat catatan snackbar
+
+  ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text('Anda Sudah klik 7 kali'),
+                duration: Duration(milliseconds: 200),
+              ),
+            );

@@ -1,0 +1,14 @@
+//shared preference itu intuk menyimpan data ke dalam local memory
+jadi ketika aplikasinya ke tutup, ketika dimunculkan kembali akan menyimpan data terakhir
+
+
+// ini untuk menyimpan variable jembatan ke dalam local memory
+final jembatan = await SharedPreferences.getInstance();
+
+
+/// ini menyimpan data ke dalam file json
+final myData =json.encode('myData', myData);
+
+
+jembatan.setString('myData', myData)
+  }

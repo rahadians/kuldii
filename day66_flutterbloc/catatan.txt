@@ -1,0 +1,28 @@
+harus pakai plugin bloc
+
+
+
+
+ini catatan dari kuldii
+// import 'package:flutter_bloc/flutter_bloc.dart';
+//
+// class CounterBloc extends Bloc<String, int> {
+//   //String itu event, int itu state
+//   int counter=0 ;
+//
+//
+//   CounterBloc() : super(7) {
+//     on <String>((event, emit)  {
+//       //<String> ini dari event yang berbentuk string baris 5
+//       // print('eventnya adalah $event');
+//
+//       if (event == 'add') {
+//         counter++;
+//       } else {
+//         counter--;
+//       }
+//
+//     });
+//
+//   }
+// }

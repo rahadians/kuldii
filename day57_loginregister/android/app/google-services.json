@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "401590459465",
+    "firebase_url": "https://auth-kuldii-default-rtdb.firebaseio.com",
+    "project_id": "auth-kuldii",
+    "storage_bucket": "auth-kuldii.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:401590459465:android:e1d7b4a88186b8f88df398",
+        "android_client_info": {
+          "package_name": "com.example.day57_loginregister"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "401590459465-f7sogtj7ttj7en01f432q7fm67bb7h8f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAO7P46LPbxL9EQ4-JxaVQ9OW8cHirtCKE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "401590459465-f7sogtj7ttj7en01f432q7fm67bb7h8f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
