@@ -1,0 +1,18 @@
+
+translation bisa ke bahasa daerah juga
+Get.updateLocale(Locale('id','jawa')
+
+'id_jawa' :{
+'title' : "ning ngarep ",
+}
+
+
+title.trArgs(['joni, sendal'])
+
+'id_jawa' :{
+'title' : "nama saya %s sedang memakai %s ",
+}
+
+atau bisa juga
+
+.trParams{}

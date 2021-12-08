@@ -1,0 +1,9 @@
+        onPressed: ()=>LoginC().hiden.toggle(), icon: Icon(Icons.remove_red_eye))),
+
+        toggle untuk lawannya
+
+        belajar password hidden atau gak
+
+        get storage untuk menyimpan cache
+
+        ketika checklist remember me di aktifkan data tidak hilang

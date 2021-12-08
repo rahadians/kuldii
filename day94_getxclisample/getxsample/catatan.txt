@@ -1,0 +1,2 @@
+generate model product.json
+get generate model with assets/models/product.json

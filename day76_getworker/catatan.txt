@@ -1,0 +1,10 @@
+worker itu ada
+void
+
+onInit dijalankan sekali saat controller
+
+ever dijalankan setiap ada perubahan
+everall mejalankan setiap ada perubahan dan bisa dilist
+once dijalankan hanya sekali
+debounce dijalankan untuk searching
+interval biasa digunakan

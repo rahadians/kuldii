@@ -1,3 +1,144 @@
 reactiv ada 2 Obx dan Getx
 
 simple ada 1 GetBuilder
+=========
+pelajaran 1 (Counter)
+
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  var count = 0.obs;
+
+  void add() {
+    count++;
+  }
+
+  MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Get State Management"),
+        ),
+        body: Center(
+          child: Obx(() =>
+            Text(
+              "angka $count",
+              style: TextStyle(fontSize: 35),
+            ),
+          ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            add();
+          },
+          child: Icon(Icons.add),
+        ),
+      ),
+    );
+  }
+}
+
+
+==========
+Pelajaran ke 2 membuat uppercase
+==========
+
+--------main.dart--------
+
+import 'package:day73_getxstatemanag/models/view.dart';
+import 'package:flutter/material.dart';
+import '../models/state.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  var orang =OrangState();
+
+  MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: HomePage(),
+    );
+  }
+}
+
+ ------state.dart-------
+ import 'package:get/get.dart';
+
+ class OrangState {
+
+     ///Initialize variables
+ var nama ="Panjul".obs;
+ var umur = 30.obs;
+
+ }
+
+
+-----view.dart------
+import 'package:day73_getxstatemanag/models/state.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import 'logic.dart';
+
+class HomePage extends StatelessWidget {
+  final logic = Get.put(ModelsLogic());
+  final state = Get.find<ModelsLogic>().state;
+  final orang = OrangState();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Get State Management"),
+      ),
+      body: Center(
+        child: Obx(() =>
+            Text(
+              "Nama Saya ${orang.nama.value}",
+              style: TextStyle(fontSize: 35),
+            ),
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+
+          orang.nama.value = orang.nama.value.toUpperCase();
+        },
+        child: Icon(Icons.add),
+      ),
+    );
+  }
+}
+
+
+------logic dart-------
+import 'package:get/get.dart';
+
+import 'state.dart';
+
+class ModelsLogic extends GetxController {
+  final OrangState state = OrangState();
+}
+
+
+kalau obs di controller maka pakai update
+kalau obs di model maka pakai put
+
+
+untuk GetBuilder pakai id di update dan id di getbuilder
+ounterLogic countC = Get.put(CounterLogic());
+
+

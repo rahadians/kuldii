@@ -1,0 +1,7 @@
+snackbar harus dimulai dengan GetMaterial
+
+ Get.snackbar("Dialog", "Ini Isi snackbar",
+              duration: Duration(seconds: 4),
+            backgroundColor: Colors.blueGrey,
+            snackPosition: SnackPosition.BOTTOM,
+          );

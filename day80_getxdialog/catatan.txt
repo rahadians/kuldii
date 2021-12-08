@@ -1,0 +1,33 @@
+
+///Default Dialog
+ Get.defaultDialog(
+            title: "Judul Dialog",
+            middleText: "Ini isi Dialog",
+            textCancel: "Batal",
+            confirm: ElevatedButton(onPressed: () {}, child: Text("Oke")));
+            action: []
+      }),
+
+untuk mencegah klik layar (hanya boleh klik show dialog)
+barrierDismissible: false;
+
+///Dialog
+   Get.dialog(AlertDialog(
+          title: Text("ini judul"),
+          content: Text("Get.dialog biasanya untuk alert atau hanya 1 tombol"),
+
+   get.dialog tidak ada barrierdismissible
+
+   apabila parameter tidak terpakai kasih underscore _ tetapi kalau semua tidak dipakai dikasih underscore lebih __ atau ___
+
+///Get General Dialog
+   Get.generalDialog(pageBuilder: (_, __,___) =>
+           AlertDialog(
+             actions: [
+               ElevatedButton(onPressed: (){Get.back();}, child: Text("batal"))
+             ],
+               title: Text("ini judul"),
+               content: Text("Get.generaldialog"),
+             ));
+
+sering yang dipakai adalah default dialog

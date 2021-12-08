@@ -1,0 +1,2 @@
+get.putasync jarang digunakan, kecuali untuk file async
+dan butuh pub dev shared_preference

@@ -1,0 +1,16 @@
+GetMaterialApp() akan dijalankan apabila seluruh widget yang didalam kurung sudah dikerjakan
+
+find diketik di dalam context, bukan di bawah class
+
+stateless diganti denga GetView agar tidak perlu find lagi,dan mycontroller berubah nama menjadi controller
+tetepi getview hanya bisa 1 controller
+
+class MyController extends GetxController with StateMixin<String>{
+agar bisa obxnya pakai controller dan lebih bagus
+}
+
+Widget build(BuildContext context) {
+    return GetMaterialApp(
+      initialBinding: BindingMyC(),
+      home: HomePage(),
+    );

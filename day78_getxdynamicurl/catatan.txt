@@ -1,0 +1,35 @@
+class AppPages {
+  static final pages = [
+    GetPage(name: '/', page: () => HomePage()),
+    GetPage(name: '/product', page: () => Product()),
+    GetPage(name: '/product/:id?', page: () => DetailPage()),
+
+    // GetPage(name: RouteName.page_3, page: () => PageTiga()),
+    // GetPage(name: RouteName.page_4, page: () => PageEmpat()),
+    // GetPage(name: RouteName.page_5, page: () => PageLima()),
+    // GetPage(name: RouteName.page_6, page: () => PageEnam()),
+    // GetPage(name: RouteName.page_7, page: () => PageTujuh()),
+  ];
+}
+
+
+children: [
+            ElevatedButton(
+                onPressed: () => Get.toNamed('/product/1?name=Jaket&ukuran=XL'),
+                child: Text("Product 1")),
+            SizedBox(
+              height: 10,
+            ),
+            ElevatedButton(
+                onPressed: () => Get.toNamed('/product/2?name=Kaos Kaki&ukuran=L'),
+                child: Text("Product 2")),
+            SizedBox(
+              height: 10,
+            ),
+            ElevatedButton(
+                onPressed: () => Get.toNamed(('/product/3?name=Sandal&warna=coklat&ukuran = 41')),
+                child: Text("Product 3")),
+            SizedBox(
+              height: 10,
+            ),
+          ],

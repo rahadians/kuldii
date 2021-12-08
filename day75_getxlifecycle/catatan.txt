@@ -1,0 +1,35 @@
+penting untuk get app life cycle harus memakai builder, tidak bisa obx atau getx
+
+
+penting untuk menambahkan
+//get.put hanya sekali ditulis
+
+final countC = Get.put(CounterController());
+
+nanti di widgetnya ditambahkan
+final countC = Get.find<CounterController>();
+
+
+untuk mendapatkan data
+final myC=TextEditingController();
+
+
+body: TextField(
+controller : myC.text
+)
+
+setiap menginisialiasi controller seperti
+final myC=TextEditingController();
+harus di dispose seperti ini :
+void dispose(){
+myC.clear();
+super.dispose();
+}
+//tetapi kalau pakai TextEditingController (GetX)tidak perlu dispose
+
+
+routing menggunakan get
+onPressed: () => Get.to(()=>TextPage()),
+
+membuat text field TextEditingController()
+TextEditingController myC = TextEditingController();

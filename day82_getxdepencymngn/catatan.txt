@@ -1,0 +1,59 @@
+pada getx, injeksi hanya perlu get.put
+
+final myC = Get.put(MyController());
+atau
+
+final MyController = Get.put(MyController());
+
+/// yang di atas disebut constructor
+
+di getx ada
+- Get.put()
+
+ adalah sebuah metode untuk menginjeksi sesuatu dependensi tanpa kita bungkus-bungkus di atasnya.
+ get.put() biasanya ditaruh di paling atas (MyApp) karena mengcreate object class,
+ baru nanti dibawahnya pakai get.find untuk setiap widget yang mau memakai
+
+contoh :
+final MyController = Get.put(MyController());
+
+
+- Get.lazyput()
+- get.create()
+- get.find()
+
+contoh :
+final  myC = Get.find<MyController>() atau
+ final MyController myC =Get.find();
+
+
+- get.putAsync ()
+
+
+karena pakai getbuilder yang ada update gak pake obs, atau getx
+
+ body: Center(
+          child: GetBuilder<myController>(
+            builder: (_) => Text(
+              // "Angka ${myC.count}",
+              "angka ${angka.count}",
+              style: TextStyle(fontSize: 35),
+            ),
+          ),
+        ),
+        floatingActionButton: FloatingActionButton(onPressed: () {
+          myC.tambah();
+          print(angka.count);
+        }));
+
+myController myC = Get.put(myController(),permanent: true);
+
+permanent:true, digunakan agar kalau layernya tertutup controllernya tidak kedelete dari memory
+
+TextField(
+controller: c.textC,
+decoration: InputDecoration(border: OutlineInputBorder()),
+
+lazyPut tidak akan dibuat controllernya selama belum di find,
+fenix, tipenya mirip permanen,
+kekurangan dari lazyput, data yang diinput akan hilang

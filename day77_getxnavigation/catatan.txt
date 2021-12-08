@@ -1,0 +1,22 @@
+Push
+pushreplectment
+pushnamed
+pop
+
+    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => PageTiga()));
+
+    Navigator.pop(context);
+
+kalau pakai getX
+
+Get.to(PageDua());
+
+kembali pakai getX
+Get.back();
+
+next tanpa bisa back
+Get.off(PageDua());
+
+next page dan membatalkan semua layer sebelumnya
+Get.offAll(PageDua());

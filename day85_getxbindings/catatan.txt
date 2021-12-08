@@ -1,0 +1,27 @@
+binding dipakai untuk memanggil controller, yang put
+dibuat di file sendiri
+
+agar bisa find langsung pakai binding,
+
+ngeput kalau di homepage tidak akan dihapus pada memory
+maka dari itu ditaruh saat pindah page Go.to tetapi pakai binding
+
+ini bisa dipakai tanpa get
+
+child: ElevatedButton(
+          onPressed: () {
+            Get.to(CountPage(),
+                binding: BindingsBuilder(() => Get.put(CountController())));
+          },
+          child: Text("Next >>"),
+        ),
+
+Binding tidak ada diparameter pada Get.toNamed, hanya pada Go.To
+
+class AppPages {
+  static final pages = [
+    GetPage(name: RouteName.home, page: () => HomePage()),
+    GetPage(name: RouteName.count, page: () => CountPage(),
+        binding: CountB())
+  ];
+}
